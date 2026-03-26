@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url(./fonts.css);
+
+:root {
+    --main-color: #7A8C6E;
+    --sub-color-1: #C8D4B0;
+    --sub-color-2: #FAFAF7;
+    --point-color: #ffbb10;
+    --bg-color-gr: #f9f9f9;
+    --bg-color-wh: #fff;
+    --bg-color-green: #E8EFD8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* vertical-align: middle; */
+    box-sizing: border-box;
+    text-size-adjust: auto;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    font: normal 14px/1 'Comic Relief';
+    color: #2C2C2C;
+    background: var(--bg-color-green);
+}
+header, main, footer, nav, aside, section, article {display: block;}
+address, em, i {font-style: normal;}
+strong, b, h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+a {color: inherit; text-decoration: none;}
+ul {list-style: none;}
