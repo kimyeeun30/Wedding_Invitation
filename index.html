@@ -17,6 +17,12 @@
 <body>
     <div id="wrap">
         <canvas id="petal-canvas"></canvas>
+
+        <button id="scroll-top">
+            <!-- <i class="bi bi-arrow-up"></i> -->
+            <i class="bi bi-chevron-bar-up"></i>
+        </button>
+
         <header id="header">
             <img src="./images/header/1.jpg" alt="mainimage" class="main-img">
             <div class="typing-wrap">
@@ -28,6 +34,7 @@
                 <h4 class="fade-up" data-delay="300">그라벨호텔 제주</h4>
             </div>
         </header>
+
         <main id="main">
             <section id="greeting">
                 <div class="top">
@@ -40,7 +47,7 @@
                             <br>
                             <br>떨리고 설레는 마음으로 내딛는
                             <br>저희 두 사람의 첫걸음을
-                            <br>함께해 주시고 따뜻한 축복을 보내 주세요.
+                            <br>함께해 주시고 따뜻한 축복을 보내주세요.
                         </p>
                         <h2 class="fade-up" data-delay="300">신랑 고건호 · 신부 김예은</h2>
                     </div>
@@ -217,7 +224,7 @@
                 </div>
                 <div class="gallery-grid"></div>
                 <div class="gallery-more">
-                    <button class="more-btn">
+                    <button class="more-btn fade-up" data-delay="450">
                         <span class="arrow">&#8964;</span>
                         <p>더보기</p>
                     </button>
@@ -291,10 +298,15 @@
                                 </div>
                                 <div class="account-box">
                                     <div class="account-left">
-                                        <p class="bank">토스뱅크</p>
+                                        <p class="bank">농협</p>
                                         <p class="number">000-0000-0000</p>
                                     </div>
-                                    <button class="copy-btn" data-account="000-0000-0000">
+                                    <button
+                                        class="copy-btn"
+                                        data-bank="농협"
+                                        data-number="000-0000-0000"
+                                        data-name="고건호"
+                                    >
                                         <i class="bi bi-copy copy-icon"></i>
                                     </button>
                                 </div>
@@ -306,10 +318,15 @@
                                 </div>
                                 <div class="account-box">
                                     <div class="account-left">
-                                        <p class="bank">토스뱅크</p>
+                                        <p class="bank">농협</p>
                                         <p class="number">000-0000-0000</p>
                                     </div>
-                                    <button class="copy-btn" data-account="000-0000-0000">
+                                    <button
+                                        class="copy-btn"
+                                        data-bank="농협"
+                                        data-number="000-0000-0000"
+                                        data-name="김경애"
+                                    >
                                         <i class="bi bi-copy copy-icon"></i>
                                     </button>
                                 </div>
@@ -331,10 +348,15 @@
                                 </div>
                                 <div class="account-box">
                                     <div class="account-left">
-                                        <p class="bank">토스뱅크</p>
+                                        <p class="bank">카카오뱅크</p>
                                         <p class="number">000-0000-0000</p>
                                     </div>
-                                    <button class="copy-btn" data-account="000-0000-0000">
+                                    <button
+                                        class="copy-btn"
+                                        data-bank="카카오뱅크"
+                                        data-number="000-0000-0000"
+                                        data-name="김예은"
+                                    >
                                         <i class="bi bi-copy copy-icon"></i>
                                     </button>
                                 </div>
@@ -346,10 +368,15 @@
                                 </div>
                                 <div class="account-box">
                                     <div class="account-left">
-                                        <p class="bank">토스뱅크</p>
+                                        <p class="bank">농협</p>
                                         <p class="number">000-0000-0000</p>
                                     </div>
-                                    <button class="copy-btn" data-account="000-0000-0000">
+                                    <button
+                                        class="copy-btn"
+                                        data-bank="농협"
+                                        data-number="000-0000-0000"
+                                        data-name="홍지연"
+                                    >
                                         <i class="bi bi-copy copy-icon"></i>
                                     </button>
                                 </div>
@@ -360,6 +387,7 @@
                 </div>
             </section>
         </main>
+
         <footer id="footer">
             <div class="gap">
                 <img src="./images/footer/1.jpg" alt="footer">

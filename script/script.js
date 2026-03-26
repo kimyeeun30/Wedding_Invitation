@@ -240,36 +240,49 @@ $(function(){
 
 
     // 오시는 길 버튼
-    const address  = '제주 제주시 일주서로 7316';
+    const address   = '제주 제주시 일주서로 7316';
     const placeName = '그라벨호텔 제주';
-    const lat = '33.489445';
-    const lng = '126.498411';
+    const lat = '33.492444';
+    const lng = '126.4286588';
 
     // 주소 복사
     $('#btn-copy').on('click', function() {
         navigator.clipboard.writeText(address).then(() => {
-            alert('주소가 복사되었습니다 📋');
+            alert('주소가 복사되었습니다.');
         });
     });
 
-    // 카카오맵 — 앱 딥링크
+    // 카카오맵
     $('#btn-kakao').on('click', function() {
-        window.open(`kakaomap://look?p=${lat},${lng}`);
-        // 앱 미설치 시 웹으로 fallback
+        const kakaoApp = `kakaomap://look?p=${lat},${lng}`;
+        const kakaoWeb = `https://map.kakao.com/link/map/${encodeURIComponent(placeName)},${lat},${lng}`;
+
+        // 모바일 앱 시도
+        const start = Date.now();
+        window.location.href = kakaoApp;
+
         setTimeout(() => {
-            window.open(`https://map.kakao.com/link/map/${placeName},${lat},${lng}`);
+            // 앱이 실행됐으면 페이지가 이미 떠났으므로 시간 차이로 판별
+            if (Date.now() - start < 1600) {
+                window.open(kakaoWeb);
+            }
         }, 1500);
     });
 
-    // 네이버지도 — 앱 딥링크
+    // 네이버지도
     $('#btn-naver').on('click', function() {
-        window.open(`nmap://place?lat=${lat}&lng=${lng}&name=${encodeURIComponent(placeName)}&appname=wedding`);
-        // 앱 미설치 시 웹으로 fallback
+        const naverApp = `nmap://place?lat=${lat}&lng=${lng}&name=${encodeURIComponent(placeName)}&appname=com.wedding.invite`;
+        const naverWeb = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}?c=${lng},${lat},15,0,0,0,dh`;
+
+        const start = Date.now();
+        window.location.href = naverApp;
+
         setTimeout(() => {
-            window.open(`https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`);
+            if (Date.now() - start < 1600) {
+                window.open(naverWeb);
+            }
         }, 1500);
     });
-
 
     // 계좌 드롭다운
     $('.account-toggle').on('click', function() {
@@ -290,10 +303,14 @@ $(function(){
 
     // 계좌 복사
     $('.copy-btn').on('click', function() {
-        const account = $(this).data('account');
-        const $icon = $(this).find('i');  // ✅ i 태그 직접 선택
+        const bank   = $(this).data('bank');
+        const number = $(this).data('number');
+        const name   = $(this).data('name');
+        const text   = `${bank} ${number} ${name}`;  // ✅ "토스뱅크 000-0000-0000 고건호"
 
-        navigator.clipboard.writeText(account).then(() => {
+        const $icon = $(this).find('i');
+
+        navigator.clipboard.writeText(text).then(() => {
             $icon.removeClass('bi-copy').addClass('bi-check2');
             setTimeout(() => {
                 $icon.removeClass('bi-check2').addClass('bi-copy');
@@ -301,5 +318,30 @@ $(function(){
         });
     });
 
+    // 스크롤탑 버튼 위치 동적 계산
+    function updateScrollTopPos() {
+        const wrapRight = document.getElementById('wrap').getBoundingClientRect().right;
+        const btnOffset = window.innerWidth - wrapRight + 16; // wrap 오른쪽 끝에서 16px 안쪽
+        $('#scroll-top').css('right', btnOffset + 'px');
+    }
+
+    updateScrollTopPos();
+    $(window).on('resize', updateScrollTopPos);
+
+    // 스크롤탑 버튼 표시/숨김
+    const $scrollTop = $('#scroll-top');
+    const headerH = $('#header').outerHeight();
+
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() > headerH) {
+            $scrollTop.addClass('visible');
+        } else {
+            $scrollTop.removeClass('visible');
+        }
+    });
+
+    $scrollTop.on('click', function() {
+        $('html, body').animate({ scrollTop: 0 }, 400);
+    });
 
 });
