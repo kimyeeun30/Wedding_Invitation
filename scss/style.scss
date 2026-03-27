@@ -146,8 +146,9 @@
 
         #calendar {
             width: 100%;
-            height: 100vh;
+            height: auto;
             background: var(--bg-color-gr);
+            padding-bottom: 60px;
 
             .calendar-divider {
                 display: flex;

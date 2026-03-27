@@ -21,7 +21,13 @@ $(function(){
     const ctx    = canvas.getContext('2d');
 
     canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.height = window.innerHeight;
+
+    // 창 크기 변경 시 canvas 재설정
+    window.addEventListener('resize', () => {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = window.innerHeight;
+    });
 
     const petals = [];
     const petalCount = 30;
