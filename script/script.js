@@ -185,7 +185,7 @@ $(function(){
 
 
     // 갤러리 자동 생성
-    const TOTAL_IMAGES = 23; // ✅ 총 이미지 개수만 여기서 변경
+    const TOTAL_IMAGES = 27; // ✅ 총 이미지 개수만 여기서 변경
     const SHOW_COUNT   = 9;  // ✅ 처음에 보여줄 개수
     let currentIndex   = 0;  // ✅ 현재 이미지 인덱스
 
