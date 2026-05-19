@@ -322,6 +322,11 @@
   font-size: 14px;
   color: #666;
   line-height: 200%;
+  margin-bottom: 16px;
+}
+#wrap #main #about .about-card .fav {
+  font-size: 12px;
+  color: #999;
 }
 #wrap #main #history {
   background: var(--bg-color-wh);
@@ -436,6 +441,160 @@
 }
 #wrap #main #history .history-wrap .history-item.right .item-img {
   order: 2;
+}
+#wrap #main #interview {
+  width: 100%;
+  background: var(--bg-color-green);
+  padding-bottom: 80px;
+}
+#wrap #main #interview .row1 {
+  text-align: center;
+  padding: 80px 0 40px 0;
+  color: var(--main-color);
+}
+#wrap #main #interview .row1 h2 {
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+#wrap #main #interview .row1 h4 {
+  color: #999;
+  font-size: 12px;
+}
+#wrap #main #interview .row2 {
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#wrap #main #interview .interview-item .question {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 160%;
+}
+#wrap #main #interview .interview-item .answer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#wrap #main #interview .interview-item .answer .answer-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+#wrap #main #interview .interview-item .answer .answer-box .who {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 8px;
+}
+#wrap #main #interview .interview-item .answer .answer-box .text {
+  font-size: 14px;
+  color: #666;
+  line-height: 170%;
+}
+#wrap #main #dday {
+  width: 100%;
+  background: var(--bg-color-wh);
+  padding-bottom: 80px;
+}
+#wrap #main #dday .row1 {
+  text-align: center;
+  padding: 80px 0 40px 0;
+  color: var(--main-color);
+}
+#wrap #main #dday .row1 h2 {
+  font-size: 36px;
+  padding-bottom: 40px;
+}
+#wrap #main #dday .row1 h4 {
+  color: #999;
+  font-size: 12px;
+}
+#wrap #main #dday .row2 {
+  padding: 0 40px;
+}
+#wrap #main #dday .row2 .dday-bar {
+  position: relative;
+  height: 50px;
+  margin-bottom: 32px;
+}
+#wrap #main #dday .row2 .dday-bar .date-label-start {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  font-size: 11px;
+  color: #888;
+  transform: translateX(-50%);
+}
+#wrap #main #dday .row2 .dday-bar .date-label-end {
+  position: absolute;
+  right: 80px;
+  top: 0;
+  font-size: 11px;
+  color: #888;
+  transform: translateX(50%);
+}
+#wrap #main #dday .row2 .dday-bar .bar-line {
+  position: absolute;
+  left: 0;
+  right: 40px;
+  top: 50%;
+  height: 1px;
+  background: #ccc;
+  transform: translateY(-50%);
+}
+#wrap #main #dday .row2 .dday-bar .bar-line::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 7px solid #ccc;
+}
+#wrap #main #dday .row2 .dday-bar .dot-start {
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--main-color);
+}
+#wrap #main #dday .row2 .dday-bar .dot-end {
+  position: absolute;
+  right: 76px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--main-color);
+}
+#wrap #main #dday .row2 .dday-bar .heart {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+}
+#wrap #main #dday .row2 .dday-text {
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  letter-spacing: 0.02em;
+}
+#wrap #main #dday .row2 .dday-text em {
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: 600;
 }
 #wrap #main #gallery {
   padding-bottom: 80px;

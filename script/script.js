@@ -184,6 +184,27 @@ $(function(){
     setInterval(updateCountdown, 1000);
 
 
+    // D+Day 카운터
+    const startDate = new Date('2019-10-20T00:00:00');
+
+    function updateDday() {
+        const now  = new Date();
+        const diff = now - startDate;
+
+        const days    = Math.floor(diff / (1000 * 60 * 60 * 24)+1);
+        const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        $('.dday-text').html(
+            `<em>${days}</em>일 <em>${hours}</em>시간 <em>${minutes}</em>분 <em>${seconds}</em>초`
+        );
+    }
+
+    updateDday();
+    setInterval(updateDday, 1000);
+
+
     // 갤러리 자동 생성
     const TOTAL_IMAGES = 27; // ✅ 총 이미지 개수만 여기서 변경
     const SHOW_COUNT   = 9;  // ✅ 처음에 보여줄 개수
