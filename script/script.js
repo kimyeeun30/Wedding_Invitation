@@ -225,7 +225,7 @@ $(function(){
     // =============================
     // 갤러리
     // =============================
-    const TOTAL_IMAGES = 27;
+    const TOTAL_IMAGES = 43;
     const SHOW_COUNT   = 9;
     let   currentIndex = 0;
 
