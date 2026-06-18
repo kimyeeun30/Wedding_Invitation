@@ -339,7 +339,7 @@ $(function(){
     // =============================
     function updateButtonPos() {
         const wrapRight = document.getElementById('wrap').getBoundingClientRect().right;
-        const offset    = window.innerWidth - wrapRight;
+        const offset    = window.innerWidth - wrapRight + 16;
         $('#scroll-top').css('right', offset + 'px');
         $('#music-player').css('right', offset + 'px');
     }
